@@ -1,5 +1,5 @@
-package com.example.account.repository;
-import com.example.account.entity.{{pascalize(tableName)}}Entity;
+package com.example.demo.repository;
+import com.example.demo.entity.{{pascalize(tableName)}}Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface {{pascalize(tableName)}}Repository extends JpaRepository<{{pascalize(tableName)}}Entity, {{primaryKeyType}}> {

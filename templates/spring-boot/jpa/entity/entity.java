@@ -1,4 +1,4 @@
-package com.example.account.entity;
+package com.example.demo.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;

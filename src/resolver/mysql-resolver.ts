@@ -28,10 +28,22 @@ class MysqlResolver implements Resolver {
       return "Double";
     }
     if (/^DECIMAL/i.test(type)) {
-      return "BigDecimal";
+      return "java.math.BigDecimal";
     }
-    if (/(^CHAR)|(^VARCHAR)|(^TINYBLOB)|(^TINYTEXT)|(^TEXT)|(^MEDIUMTEXT)|(^LONGTEXT)/i.test(type)) {
+    if (/(^CHAR)|(^VARCHAR)|(^TINYTEXT)|(^TEXT)|(^MEDIUMTEXT)|(^LONGTEXT)/i.test(type)) {
       return "String";
+    }
+    if (/^DATE/i.test(type)) {
+      return "java.sql.Date";
+    }
+    if (/^TIME$/i.test(type)) {
+      return "java.sql.Time";
+    }
+    if (/^TIMESTAMP$/i.test(type)) {
+      return "java.sql.Timestamp";
+    }
+    if (/(^TINYBLOB)|(^BLOB)|(^MEDIUMBLOB)|(^LONGBLOB)/i.test(type)) {
+      return "Byte[]";
     }
     return "Unknown";
   }

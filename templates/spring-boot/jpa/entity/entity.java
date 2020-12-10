@@ -10,7 +10,7 @@ import javax.persistence.*;
 @DynamicUpdate
 @DynamicInsert
 @Data
-public class {{pascalize(tableName)}} {
+public class {{pascalize(tableName)}}Entity {
 @each(field in fields)
 @if(field.isPrimaryKey)
   @Id
@@ -18,7 +18,7 @@ public class {{pascalize(tableName)}} {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
 @endif
 @endif
-  @Column(name = "{{field.field}}")
+  @Column
   private {{field.type}} {{camelize(field.field)}};
 @endeach
 }

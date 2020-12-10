@@ -1,0 +1,10 @@
+{
+  "db": {
+    "type": "mysql",
+    "host": "192.168.2.129",
+    "port": "3301",
+    "username": "root",
+    "password": "123123",
+    "database": "db_account"
+  }
+}

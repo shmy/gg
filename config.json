@@ -6,5 +6,27 @@
     "username": "root",
     "password": "123123",
     "database": "db_account"
+  },
+  "types": {
+    "java_mysql": {
+      "(^INT)|(^TINYINT)|(^SMALLINT)|(^MEDIUMINT)": "Integer",
+      "^BIGINT": "Long",
+      "^FLOAT": "Float",
+      "^DECIMAL": "java.math.BigDecimal",
+      "(^CHAR)|(^VARCHAR)|(^TINYTEXT)|(^TEXT)|(^MEDIUMTEXT)|(^LONGTEXT)": "String",
+      "^DATE": "java.sql.Date",
+      "^TIMESTAMP$": "java.sql.Timestamp",
+      "(^TINYBLOB)|(^BLOB)|(^MEDIUMBLOB)|(^LONGBLOB)": "Byte[]"
+    },
+    "typescript_mysql": {
+      "(^INT)|(^TINYINT)|(^SMALLINT)|(^MEDIUMINT)": "number",
+      "^BIGINT": "number",
+      "^FLOAT": "number",
+      "^DECIMAL": "number",
+      "(^CHAR)|(^VARCHAR)|(^TINYTEXT)|(^TEXT)|(^MEDIUMTEXT)|(^LONGTEXT)": "string",
+      "^DATE": "Date",
+      "^TIMESTAMP$": "string",
+      "(^TINYBLOB)|(^BLOB)|(^MEDIUMBLOB)|(^LONGBLOB)": "ArrayBuffer"
+    }
   }
 }

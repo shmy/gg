@@ -14,7 +14,7 @@ class MysqlDatasource implements Datasource {
     });
   }
 
-  async query(command: string, args: any[] | undefined): Promise<any> {
+  async query(command: string, args?: any[]): Promise<any> {
     return await this.connection!.query(command, args);
   }
 

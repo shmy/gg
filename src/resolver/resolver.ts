@@ -1,5 +1,5 @@
 export interface Resolver {
-  resolve: (data: any) => ResolverResult[];
+  resolve: (data: any, type2define: RegExpMapper[]) => ResolverResult[];
 }
 
 export interface ResolverResult {
@@ -10,4 +10,7 @@ export interface ResolverResult {
   isPrimaryKey: boolean;
   isAutoIncrement: boolean;
 }
-
+export interface RegExpMapper {
+  reg: RegExp;
+  val: string;
+}

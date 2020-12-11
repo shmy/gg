@@ -28,10 +28,10 @@ class Gg extends Command {
   async run() {
     const {flags} = this.parse(Gg)
     const configPath = path.resolve(flags.config!);
-    const {db, types} = await import(configPath);
+    const {db, typeMapper} = await import(configPath);
     switch (db.type.toLowerCase()) {
       case 'mysql':
-        await this.mysqlDo(db, flags.table!, types.java_mysql, flags.input!, flags.output!);
+        await this.mysqlDo(db, flags.table!, typeMapper.java_mysql, flags.input!, flags.output!);
         break;
       default:
         this.error(`type: ${db.type} not supported`);

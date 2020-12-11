@@ -7,7 +7,7 @@
     "password": "123123",
     "database": "db_account"
   },
-  "types": {
+  "typeMapper": {
     "java_mysql": {
       "(^INT)|(^TINYINT)|(^SMALLINT)|(^MEDIUMINT)": "Integer",
       "^BIGINT": "Long",
